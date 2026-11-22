@@ -647,6 +647,18 @@ details p{animation:fq .45s ease}
 .pick>*{min-width:0}
 .bds{display:flex;flex-wrap:wrap;gap:10px}
 .qm{height:.38em;margin-bottom:.12em}
+
+/* ===== v12: mobile hero composition is set by screen WIDTH, not height, so every phone looks the same ===== */
+@media(max-width:900px){
+  .hero{min-height:0;align-items:flex-end}
+  .hero-in{padding:74vw 0 clamp(84px,24vw,104px)}
+  .hero h1{font-size:min(13.4vw,4.4rem);margin:min(4vw,22px) 0 min(4vw,20px)}
+  .hero .lead{font-size:min(4.1vw,1.1rem);line-height:1.6}
+  .hero .cta{margin-top:min(6vw,28px)}
+  .hero .label{font-size:min(3vw,.8rem)}
+  .model img{object-position:40% 30%}
+}
+@media(max-width:900px){.hero-in{padding-top:70vw}.hero h1{max-width:none}.hero h1 .ln{display:block}}
 </style>
 </head>
 <body>
@@ -689,7 +701,7 @@ details p{animation:fq .45s ease}
     <div class="wrap hero-grid">
       <div class="copy">
         <div class="label">Elegance By Rhea &middot; Kolkata</div>
-        <h1 id="h1">Jewellery for the days you&rsquo;ll <em>remember.</em></h1>
+        <h1 id="h1"><span class="ln">Jewellery for</span> <span class="ln">the days you&rsquo;ll</span> <span class="ln"><em>remember.</em></span></h1>
         <p class="lead">See it on your phone. Try it on at our showroom.</p>
         <div class="cta">
           <a class="btn btn-gold" href="https://wa.me/910000000000?text=Hi%2C%20I%20saw%20your%20website" target="_blank" rel="noopener">Message us on WhatsApp</a>
